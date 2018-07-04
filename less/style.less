@@ -1,0 +1,97 @@
+// "out": "../css/style.css"
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, ul, li, span, div, a, p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+    font-family: "Tahoma";
+    font-weight: normal;
+}
+
+.overflow() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Component
+.slider-container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: #000;
+
+	.slider-row {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		height: 100vh;
+		transition: all 0.4s ease-out;
+
+		.slide {
+			float: left;
+			height: 100vh;
+			width: 100vw;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+		}
+	}
+	.arrow {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 50px;
+		cursor: pointer;
+
+		&.left {
+			left: 0;
+			background: url(../img/icons/slide-left.svg), rgba(0, 0, 0, 0.6);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 40%;
+		}
+		&.right {
+			right: 0;
+			background: url(../img/icons/slide-right.svg), rgba(0, 0, 0, 0.6);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 40%;
+		}
+	}
+	.nav-dots {
+		position: absolute;
+		bottom: 30px;
+		left: 0;
+		right: 0;
+		text-align: center;
+
+		.dot {
+			cursor: pointer;
+			margin: 3px;
+			display: inline-block;
+			height: 12px;
+			width: 12px;
+			background: #fff;
+			border-radius: 100%;
+
+			&.active {
+				background: green;
+			}
+		}
+	}
+}
+
+// Genetal styles
